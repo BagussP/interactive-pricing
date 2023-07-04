@@ -42,6 +42,3 @@ input[type="range"]::-moz-range-thumb {
   box-shadow: 0 6px 5px 8px hsla(174, 86%, 45%, 0.2);
   
 }
-
-input[type="range"]:active::-webkit-slider-thumb {
-}
