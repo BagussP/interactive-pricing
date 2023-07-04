@@ -2,26 +2,46 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+input[type="range"] {
+  /* menghilangkan tampilan default */
+  appearance: none; 
+  /* buat custom design */
+  width: 85%;
+  cursor: pointer;
+  outline: none;
+  border-radius: 15px;
+  height: 6px;
+  background: #ccc;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+/* Thumb: webkit */
+input[type="range"]::-webkit-slider-thumb {
+  /* menghilangkan tampilan default */
+  appearance: none; 
+  /* buat custom design */
+  height: 35px;
+  width: 35px;
+  background-color: hsl(174, 86%, 45%);
+  background-image: url("../../public/icon-slider.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50%;
+box-shadow: 0 6px 5px 8px hsla(174, 86%, 45%, 0.2);
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+/* Thumb: Firefox */
+input[type="range"]::-moz-range-thumb {
+  height: 35px;
+  width: 35px;
+  background-image: url("../../public/icon-slider.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: hsl(174, 86%, 45%);
+  border-radius: 50%;
+  border: none;
+  box-shadow: 0 6px 5px 8px hsla(174, 86%, 45%, 0.2);
+  
+}
+
+input[type="range"]:active::-webkit-slider-thumb {
 }
